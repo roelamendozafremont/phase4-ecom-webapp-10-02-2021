@@ -1,0 +1,109 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+      <h4>Customer Form : </h4>
+      <form class="customer-form" [formGroup]="customerForm" (ngSubmit)="onSubmit(customerForm)">
+        <div class="form-row">
+          <!-- First Name -->
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="name">First Name</label>
+              <input type="text" class="form-control" name="fname" id="fname" formControlName="fname"
+                     aria-describedby="fnameHelp">
+              <small *ngIf="hasError('fname')" [class]="hasError('fname') ? 'error' :''">
+                <div *ngIf="f.fname.errors">
+                  <span *ngIf="f.fname.errors.required">First Name is a required field</span>
+                  <span *ngIf="f.fname.errors.minlength">
+                    First Name is a min 3 char long
+                    field
+                  </span>
+                  <span *ngIf="f.fname.errors.maxlength">
+                    First Name is a max 30 char long field
+                  </span>
+                </div>
+              </small>
+            </div>
+          </div>
+          <!-- Middle Name -->
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="name">Middle Name</label>
+              <input type="text" class="form-control" name="mname" id="mname" formControlName="mname"
+                     aria-describedby="mnameHelp">
+              <small *ngIf="hasError('mname')" [class]="hasError('mname') ? 'error' :''">
+                <div *ngIf="f.mname.errors">
+                  <span *ngIf="f.mname.errors.maxlength">
+                    Middle Name is a max 30 char long field
+                  </span>
+                </div>
+              </small>
+            </div>
+          </div>
+          <!-- Last Name -->
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="name">Last Name</label>
+              <input type="text" class="form-control" name="lname" id="lname" formControlName="lname"
+                     aria-describedby="lnameHelp">
+              <small *ngIf="hasError('lname')" [class]="hasError('lname') ? 'error' :''">
+                <div *ngIf="f.lname.errors">
+                  <span *ngIf="f.lname.errors.required">Last Name is a required field</span>
+                  <span *ngIf="f.lname.errors.minlength">
+                    Last Name is a min 3 char long
+                    field
+                  </span>
+                  <span *ngIf="f.lname.errors.maxlength">
+                    Laast Name is a max 30 char long field
+                  </span>
+                </div>
+              </small>
+            </div>
+          </div>
+            <!-- address -->
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="description">Address</label>
+                <textarea type="description" class="form-control" name="address" id="address" formControlName="address"
+                          aria-describedby="addressHelp"> </textarea>
+                <small *ngIf="hasError('address')" [class]="hasError('address') ? 'error' :''">
+                  <div *ngIf="f.address.errors">
+                    <span *ngIf="f.address.errors.required">Address is a required field</span>
+                  </div>
+                </small>
+              </div>
+            </div>
+            <!-- email -->
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <textarea type="email" class="form-control" name="email" id="email" formControlName="email"
+                          aria-describedby="emailHelp"> </textarea>
+                <small *ngIf="hasError('email')" [class]="hasError('email') ? 'error' :''">
+                  <div *ngIf="f.email.errors">
+                    <span *ngIf="f.email.errors.required">Email is a required field</span>
+                  </div>
+                </small>
+              </div>
+            </div>
+            <!-- phone -->
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <textarea type="phone" class="form-control" name="phone" id="phone" formControlName="phone"
+                          aria-describedby="phoneHelp"> </textarea>
+                <small *ngIf="hasError('phone')" [class]="hasError('phone') ? 'error' :''">
+                  <div *ngIf="f.phone.errors">
+                    <span *ngIf="f.phone.errors.required">Phone is a required field</span>
+                  </div>
+                </small>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-success btn-block">Submit</button>
+</form>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>

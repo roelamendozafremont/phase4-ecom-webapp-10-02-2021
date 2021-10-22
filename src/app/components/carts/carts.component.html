@@ -1,0 +1,29 @@
+<!--<button class="btn btn-primary" routerLink="/Carts/create">Create</button>-->
+<table class="table" routerLink="/carts/list">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Date</th>
+        <th scope="col">Customer ID</th>
+        <th scope="col">Produc IDs</th>
+        <th scope="col">Total</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of carts">
+
+        <th scope="row">{{p.id}}</th>
+        <td>{{p.date}}</td>
+        <td>{{p.customerId}}</td>
+        <td>{{p.productIds}}</td>
+        <td>{{p.total}}</td>
+
+        <td>
+          <a class="badge badge-info" (click)="onUpdate(p)">update</a> &nbsp; &nbsp;
+          <a class="badge badge-danger" (click)="onDelete(p.id)">delete</a>
+        </td>
+
+      </tr>
+    </tbody>
+</table>

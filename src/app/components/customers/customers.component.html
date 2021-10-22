@@ -1,0 +1,33 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Middle Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of customers">
+        <!-- <span *ngIf="p.active"> -->
+        <th scope="row">{{p.id}}</th>
+        <td>{{p.fname}}</td>
+        <td>{{p.mname}}</td>
+        <td>{{p.lname}}</td>
+        <td>{{p.phone}}</td>
+        <td>{{p.email}}</td>
+        <td>{{p.address}}</td>
+        <!-- <td><a href="#" [class]="p.active ? 'badge badge-success' : 'badge badge-danger'">{{p.active}}</a> </td> -->
+        <!-- <td><a href="#" class="badge badge-info">{{p.brand}}</a> </td> -->
+        <td>
+          <a class="badge badge-info" (click)="onUpdate(p)">update</a> &nbsp; &nbsp;
+          <a class="badge badge-danger" (click)="onDelete(p.id)">delete</a>
+        </td>
+        <!-- </span> -->
+      </tr>
+    </tbody>
+</table>

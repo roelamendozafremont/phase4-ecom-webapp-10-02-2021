@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css']
 })
-export class CreateComponent implements OnInit {
+export class PCreateComponent implements OnInit {
 
   public productForm: FormGroup;
   public submitted: boolean = false;

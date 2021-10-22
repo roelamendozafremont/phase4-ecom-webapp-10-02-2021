@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,16 +15,17 @@ export class LoginComponent implements OnInit {
   };
   public submitted:boolean = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  public onSubmit(loginForm:any) {
-    if(loginForm.valid) {
+  public onSubmit(loginForm: any) {
+    if ((loginForm.valid) && (this.login.email == "roelklet@gmail.com") && (this.login.password == "password")) {
       this.submitted = true;
-      console.log(this.login);
-      
+      //console.log(this.login);
+      this.router.navigate(['products']);
+
     } else{ 
       console.log("Invalid Form !");
       this.validateForm(loginForm);

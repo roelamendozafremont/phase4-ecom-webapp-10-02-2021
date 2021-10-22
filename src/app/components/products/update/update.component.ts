@@ -9,7 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
   templateUrl: './update.component.html',
   styleUrls: ['./update.component.css']
 })
-export class UpdateComponent implements OnInit {
+export class PUpdateComponent implements OnInit {
 
   public productForm: FormGroup;
   public submitted: boolean = false;

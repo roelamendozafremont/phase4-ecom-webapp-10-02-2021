@@ -1,0 +1,68 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+      <h4>Cart Item Form : </h4>
+      <form class="cart-form" [formGroup]="cartForm" (ngSubmit)="onSubmit(cartForm)">
+        <div class="form-row">
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="text" class="form-control" name="date" id="date" formControlName="date"
+                     aria-describedby="dateHelp">
+              <small *ngIf="hasError('date')" [class]="hasError('date') ? 'error' :''">
+                <div *ngIf="f.date.errors">
+                  <span *ngIf="f.date.errors.required">Date is a required field</span>
+                </div>
+              </small>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="customerId">Customer ID</label>
+              <input type="text" class="form-control" name="customerId" id="customerId" formControlName="customerId"
+                     aria-describedby="customerIdHelp">
+              <small *ngIf="hasError('customerId')" [class]="hasError('customerId') ? 'error' :''">
+                <div *ngIf="f.customerId.errors">
+                  <span *ngIf="f.customerId.errors.required">Customer ID is a required field</span>
+                </div>
+              </small>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="productIds">Product IDs</label>
+              <input type="text" class="form-control" name="productIds" id="productIds" formControlName="productIds"
+                     aria-describedby="productIdsdHelp">
+              <small *ngIf="hasError('productIds')" [class]="hasError('productIds') ? 'error' :''">
+                <div *ngIf="f.productIds.errors">
+                  <span *ngIf="f.productIds.errors.required">Product IDs is a required field</span>
+                </div>
+              </small>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="total">Total Price</label>
+              <input type="text" class="form-control" name="total" id="total" formControlName="total"
+                     aria-describedby="totalHelp">
+              <small *ngIf="hasError('total')" [class]="hasError('total') ? 'error' :''">
+                <div *ngIf="f.total.errors">
+                  <span *ngIf="f.total.errors.required">Total price is a required field</span>
+                </div>
+              </small>
+            </div>
+          </div>
+        </div>
+
+
+  <button type="submit" class="btn btn-success btn-block">Submit</button>
+  </form>
+</div>
+        <div class="col"></div>
+    </div>
+</div>
