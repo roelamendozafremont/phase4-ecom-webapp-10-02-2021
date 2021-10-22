@@ -33,6 +33,10 @@ import { ProductService } from './services/product.service';
 import { CustomerService } from './services/customer.service';
 import {CartService } from './services/cart.service';
 import { HttpClientModule } from '@angular/common/http';
+import { InputformatorDirective } from './directives/inputformator.directive';
+import { HighlighterDirective } from './directives/highlighter.directive';
+import { MultiplierPipe } from './pipes/multiplier.pipe';
+import { SummaryPipe } from './pipes/summary.pipe';
 
 @NgModule({
   declarations: [
@@ -61,6 +65,10 @@ import { HttpClientModule } from '@angular/common/http';
     StyleComponent,
     EventComponent,
     TwowayComponent,
+    InputformatorDirective,
+    HighlighterDirective,
+    MultiplierPipe,
+    SummaryPipe,
     
   ],
   imports: [

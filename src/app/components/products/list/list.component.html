@@ -1,4 +1,4 @@
-<!--<div class="container" routerLink="/products">
+<div class="container" routerLink="/products">
 
   <table class="table">
     <thead class="thead-dark">
@@ -6,23 +6,23 @@
         <th scope="col">#</th>
         <th scope="col">Menu Name</th>
         <th scope="col">Price</th>
-        <th scope="col">Description</th>-->
-        <!--<th scope="col">Actions</th>-->
-      <!--</tr>
+        <th scope="col">Description</th>
+        <th scope="col">Actions</th>
+      </tr>
     </thead>
     <tbody>
       <tr *ngFor="let p of products">
         <th scope="row">{{p.id}}</th>
         <td>{{p.name}}</td>
         <td>{{p.price}}</td>
-        <td>{{p.description}}</td>-->
-        <!--<td>
+        <td>{{p.description}}</td>
+        <td>
           <a class="badge badge-info" (click)="onUpdate(p)">update</a> &nbsp; &nbsp;
           <a class="badge badge-danger" (click)="onDelete(p.id)">delete</a>
-        </td>-->
-      <!--</tr>
+        </td>
+      </tr>
     </tbody>
   </table>
 
-</div>-->
-<p>list works!</p>
+</div>
+
