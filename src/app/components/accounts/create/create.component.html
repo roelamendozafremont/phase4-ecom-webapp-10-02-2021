@@ -1,0 +1,77 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+            <h4>Create Account Balance Form : </h4>
+            <form class="account-form" [formGroup]="accountForm" (ngSubmit)="onSubmit(accountForm)">
+              <div class="form-row">
+
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" class="form-control" name="fname" id="fname" formControlName="fname"
+                           aria-describedby="fnameHelp">
+                    <small *ngIf="hasError('fname')" [class]="hasError('fname') ? 'error' :''">
+                      <div *ngIf="f.fname.errors">
+                        <span *ngIf="f.fname.errors.required">First Name is a required field</span>
+                      </div>
+                    </small>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" class="form-control" name="lname" id="lname" formControlName="lname"
+                           aria-describedby="lnameHelp">
+                    <small *ngIf="hasError('lname')" [class]="hasError('lname') ? 'error' :''">
+                      <div *ngIf="f.lname.errors">
+                        <span *ngIf="f.lname.errors.required">Last Name is a required field</span>
+                      </div>
+                    </small>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="savingBalance">Saving Balance</label>
+                    <input type="text" class="form-control" name="savingBalance" id="savingBalance" formControlName="savingBalance"
+                           aria-describedby="savingBalanceHelp">
+                    <small *ngIf="hasError('savingBalance')" [class]="hasError('savingBalance') ? 'error' :''">
+                      <div *ngIf="f.savingBalance.errors">
+                        <span *ngIf="f.savingBalance.errors.required">Saving Balance is a required field</span>
+                      </div>
+                    </small>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="checkingBalance">Checking Balance</label>
+                    <input type="text" class="form-control" name="checkingBalance" id="checkingBalance" formControlName="checkingBalance"
+                           aria-describedby="checkingBalanceHelp">
+                    <small *ngIf="hasError('checkingBalance')" [class]="hasError('checkingBalance') ? 'error' :''">
+                      <div *ngIf="f.checkingBalance.errors">
+                        <span *ngIf="f.checkingBalance.errors.required">Checking Balance is a required field</span>
+                      </div>
+                    </small>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="dateOpen">Date Opened</label>
+                    <input type="text" class="form-control" name="dateOpen" id="dateOpen" formControlName="dateOpen"
+                           aria-describedby="dateOpenHelp">
+                    <small *ngIf="hasError('dateOpen')" [class]="hasError('dateOpen') ? 'error' :''">
+                      <div *ngIf="f.dateOpen.errors">
+                        <span *ngIf="f.dateOpen.errors.required">Date Opened is a required field</span>
+                      </div>
+                    </small>
+                  </div>
+                </div>
+              </div>
+
+
+                <button type="submit" class="btn btn-success btn-block">Submit</button>
+            </form>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>

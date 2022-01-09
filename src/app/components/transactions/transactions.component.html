@@ -1,0 +1,28 @@
+<!--<button class="btn btn-primary" routerLink="/products/create">Create</button>-->
+<table class="table" routerLink="/transactions/list">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Debit Amount</th>
+        <th scope="col">Credit Amount</th>
+        <th scope="col">Date Transaction</th>
+        <th scope="col">Type</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of transactions">
+        <!-- <span *ngIf="p.active"> -->
+        <th scope="row">{{p.id}}</th>
+        <td>{{p.debitAmount}}</td>
+        <td>{{p.creditAmount}}</td>
+        <td>{{p.dateTransaction}}</td>
+        <td>{{p.type}}</td>
+        <td>
+          <a class="badge badge-info" (click)="onUpdate(p)">update</a> &nbsp; &nbsp;
+          <a class="badge badge-danger" (click)="onDelete(p.id)">delete</a>
+        </td>
+        <!-- </span> -->
+      </tr>
+    </tbody>
+</table>

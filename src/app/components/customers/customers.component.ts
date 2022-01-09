@@ -13,7 +13,7 @@ export class CustomersComponent implements OnInit {
   public customers: any;
 
   // inject dependencies
-  constructor(private dataService: DataService, private customerService: CustomerService, private router:Router) { }
+  constructor(private customerService: CustomerService, private router:Router) { }
 
   ngOnInit(): void {
 

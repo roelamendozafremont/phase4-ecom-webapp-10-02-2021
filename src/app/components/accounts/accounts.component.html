@@ -1,0 +1,30 @@
+<!--<button class="btn btn-primary" routerLink="/products/create">Create</button>-->
+<table class="table" routerLink="/accounts/list">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Saving Balance</th>
+        <th scope="col">Checking Balance</th>
+        <th scope="col">Date Opened</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of accounts">
+        <!-- <span *ngIf="p.active"> -->
+        <th scope="row">{{p.id}}</th>
+        <td>{{p.client.fname}}</td>
+        <td>{{p.client.lname}}</td>
+        <td>{{p.saving.balance}}</td>
+        <td>{{p.checking.balance}}</td>
+        <td>{{p.dateOpen}}</td>
+        <td>
+          <a class="badge badge-info" (click)="onUpdate(p)">update</a> &nbsp; &nbsp;
+          <a class="badge badge-danger" (click)="onDelete(p.id)">delete</a>
+        </td>
+        <!-- </span> -->
+      </tr>
+    </tbody>
+</table>

@@ -1,0 +1,65 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+      <h4>Create Transaction Balance Form : </h4>
+      <form class="transaction-form" [formGroup]="transactionForm" (ngSubmit)="onSubmit(transactionForm)">
+        <div class="form-row">
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="debitAmount">Debit  Amount</label>
+              <input type="text" class="form-control" name="debitAmount" id="debitAmount" formControlName="debitAmount"
+                     aria-describedby="debitAmountHelp">
+              <small *ngIf="hasError('debitAmount')" [class]="hasError('debitAmount') ? 'error' :''">
+                <div *ngIf="f.debitAmount.errors">
+                  <span *ngIf="f.debitAmount.errors.required">Debit Amount is a required field</span>
+                </div>
+              </small>
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="creditAmount">Credit  Amount</label>
+              <input type="text" class="form-control" name="creditAmount" id="creditAmount" formControlName="creditAmount"
+                     aria-describedby="creditAmountHelp">
+              <small *ngIf="hasError('creditAmount')" [class]="hasError('creditAmount') ? 'error' :''">
+                <div *ngIf="f.creditAmount.errors">
+                  <span *ngIf="f.creditAmount.errors.required">Credit Amount is a required field</span>
+                </div>
+              </small>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="dateTransaction">Date Transaction</label>
+              <input type="text" class="form-control" name="dateTransaction" id="dateTransaction" formControlName="dateTransaction"
+                     aria-describedby="dateTransactionHelp">
+              <small *ngIf="hasError('dateTransaction')" [class]="hasError('dateTransaction') ? 'error' :''">
+                <div *ngIf="f.dateTransaction.errors">
+                  <span *ngIf="f.dateTransaction.errors.required">Date Transaction is a required field</span>
+                </div>
+              </small>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="type">Type</label>
+              <input type="text" class="form-control" name="type" id="type" formControlName="type"
+                     aria-describedby="typeHelp">
+              <small *ngIf="hasError('type')" [class]="hasError('type') ? 'error' :''">
+                <div *ngIf="f.type.errors">
+                  <span *ngIf="f.type.errors.required">type is a required field</span>
+                </div>
+              </small>
+            </div>
+          </div>
+
+        </div>
+        <button type="submit" class="btn btn-success btn-block">Submit</button>
+      </form>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>

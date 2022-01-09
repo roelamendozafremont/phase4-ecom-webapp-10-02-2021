@@ -1,0 +1,42 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-6">
+      <h4>Update Checking Balance Form : </h4>
+      <form class="checking-form" [formGroup]="checkingForm" (ngSubmit)="onSubmit(checkingForm)">
+
+        <div class="form-row">
+
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="type">Type</label>
+              <input type="text" class="form-control" name="type" id="type" formControlName="type"
+                     aria-describedby="typeHelp">
+              <small *ngIf="hasError('type')" [class]="hasError('type') ? 'error' :''">
+                <div *ngIf="f.type.errors">
+                  <span *ngIf="f.type.errors.required">Type is a required field</span>
+                </div>
+              </small>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="balance">Balance</label>
+              <input type="text" class="form-control" name="balance" id="balance" formControlName="balance"
+                     aria-describedby="balanceHelp">
+              <small *ngIf="hasError('balance')" [class]="hasError('balance') ? 'error' :''">
+                <div *ngIf="f.balance.errors">
+                  <span *ngIf="f.balance.errors.required">Balance is a required field</span>
+                </div>
+              </small>
+            </div>
+          </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-success btn-block">Submit</button>
+      </form>
+  </div>
+        <div class="col"></div>
+    </div>
+</div>
