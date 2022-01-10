@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ClientService {
 
-  private url: string = 'http://localhost:8090/api/clients';
+  private url: string = 'http://18.222.204.254:8090/api/clients';
 
   constructor(private httpClient: HttpClient) { }
 
